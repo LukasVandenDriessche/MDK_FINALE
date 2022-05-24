@@ -1,0 +1,10 @@
+{
+    "_Type": "Action.Type.OfflineOData.Close",
+    "Service": "/flexso_mdk_parking/Services/sap_flexso_parkingapp_mobileservices.service",
+    "Force": true,
+    "ActionResult": {
+        "_Name": "close"
+    },
+    "OnSuccess": "/flexso_mdk_parking/Actions/Service/CloseOfflineSuccessMessage.action",
+    "OnFailure": "/flexso_mdk_parking/Actions/Service/CloseOfflineFailureMessage.action"
+}

@@ -1,0 +1,6 @@
+{
+    "ModalPageFullscreen": false,
+    "ModalPage": true,
+    "PageToOpen": "/flexso_mdk_parking/Pages/Registrations/Registrations_Edit.page",
+    "_Type": "Action.Type.Navigation"
+}

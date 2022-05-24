@@ -1,0 +1,6 @@
+{
+	"_Type": "Action.Type.Message",
+	"Message": "{probability} / {value}",
+	"Title": "Failure",
+	"OKCaption": "OK"
+}

@@ -1,0 +1,76 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.FormCellContainer",
+			"_Name": "FormCellContainer",
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "ID",
+							"Caption": "ID"
+						},
+						{
+							"_Type": "Control.Type.FormCell.DatePicker",
+							"_Name": "regtime",
+							"Caption": "regtime",
+							"Mode": "Datetime"
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "available",
+							"Caption": "available"
+						},
+						{
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "lot_ID",
+							"IsEditable": true,
+							"IsVisible": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": false,
+							"Caption": "lot_ID",
+							"IsSelectedSectionEnabled": true,
+							"IsPickerDismissedOnSelection": true,
+							"PickerItems": {
+								"DisplayValue": "{ID}",
+								"ReturnValue": "{ID}",
+								"Target": {
+									"EntitySet": "Lots",
+									"Service": "/flexso_mdk_parking/Services/sap_flexso_parkingapp_mobileservices.service",
+									"UniqueIdType": "Integer"
+								}
+							}
+						}
+					],
+					"Visible": true
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Registrations_Create",
+	"Caption": "Create Registrations",
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem0",
+				"Caption": "",
+				"SystemItem": "Cancel",
+				"Position": "Left",
+				"IsIconCircular": false,
+				"OnPress": "/flexso_mdk_parking/Actions/CloseModalPage_Cancel.action"
+			},
+			{
+				"_Name": "ActionBarItem1",
+				"Caption": "",
+				"SystemItem": "Save",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"OnPress": "/flexso_mdk_parking/Actions/Registrations/Registrations_CreateEntity.action"
+			}
+		],
+		"_Name": "ActionBar1"
+	}
+}

@@ -1,0 +1,5 @@
+{
+	"DestinationName": "sap.flexso.parkingapp.mobileservices",
+	"OfflineEnabled": false,
+	"SourceType": "Mobile"
+}

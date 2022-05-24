@@ -1,0 +1,75 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.FormCellContainer",
+			"_Name": "FormCellContainer",
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "ID",
+							"Caption": "ID"
+						},
+						{
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "nr",
+							"Caption": "nr",
+							"KeyboardType": "Number"
+						},
+						{
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "floor",
+							"Caption": "floor"
+						},
+						{
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "location_name",
+							"IsEditable": true,
+							"IsVisible": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": false,
+							"Caption": "location_name",
+							"IsSelectedSectionEnabled": true,
+							"IsPickerDismissedOnSelection": true,
+							"PickerItems": {
+								"DisplayValue": "{name}",
+								"ReturnValue": "{name}",
+								"Target": {
+									"EntitySet": "Locations",
+									"Service": "/flexso_mdk_parking/Services/sap_flexso_parkingapp_mobileservices.service",
+									"UniqueIdType": "Integer"
+								}
+							}
+						}
+					],
+					"Visible": true
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Lots_Create",
+	"Caption": "Create Lots",
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem0",
+				"Caption": "",
+				"SystemItem": "Cancel",
+				"Position": "Left",
+				"IsIconCircular": false,
+				"OnPress": "/flexso_mdk_parking/Actions/CloseModalPage_Cancel.action"
+			},
+			{
+				"_Name": "ActionBarItem1",
+				"Caption": "",
+				"SystemItem": "Save",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"OnPress": "/flexso_mdk_parking/Actions/Lots/Lots_CreateEntity.action"
+			}
+		],
+		"_Name": "ActionBar1"
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"_Type": "Action.Type.PopoverMenu",
+	"PopoverItems": [
+		{
+			"Title": "Delete",
+			"OnPress": "/flexso_mdk_parking/Rules/Lots/Lots_DeleteConfirmation.js"
+		}
+	]
+}

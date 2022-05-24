@@ -1,0 +1,12 @@
+{
+    "PopoverItems": [{
+            "Title": "Add Lots",
+            "OnPress": "/flexso_mdk_parking/Actions/Locations/NavToLocations_CreateLots.action"
+        },
+        {
+            "Title": "Delete",
+            "OnPress": "/flexso_mdk_parking/Rules/Locations/Locations_DeleteConfirmation.js"
+        }
+    ],
+    "_Type": "Action.Type.PopoverMenu"
+}

@@ -1,0 +1,83 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FCListPicker",
+							"IsEditable": true,
+							"IsVisible": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": false,
+							"Caption": "Select Lot",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": true,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": {
+								"Target": {
+									"Service": "/flexso_mdk_parking/Services/sap_flexso_parkingapp_mobileservices.service",
+									"EntitySet": "Lots",
+									"QueryOptions": "$orderby=location_name,floor,nr"
+								},
+								"DisplayValue": "{location_name} / nr: {nr} / floor: {floor}",
+								"ReturnValue": "{ID}"
+							}
+						},
+						{
+							"Value": "Enter Date",
+							"_Type": "Control.Type.FormCell.DatePicker",
+							"_Name": "FCDatePicker",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Caption": "Select Date",
+							"Mode": "Datetime"
+						}
+					],
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell0"
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Predictions_MakePrediction",
+	"Caption": "Make Prediction",
+	"PrefersLargeCaption": true,
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "Cancel",
+				"Caption": "Cancel",
+				"SystemItem": "Cancel",
+				"Position": "Left",
+				"IsIconCircular": false,
+				"Visible": true,
+				"OnPress": "/flexso_mdk_parking/Actions/CloseModalPage_Cancel.action"
+			},
+			{
+				"_Name": "Submit",
+				"Caption": "Item",
+				"SystemItem": "Done",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": true,
+				"OnPress": "/flexso_mdk_parking/Actions/Predictions/Predictions_Predict.action"
+			}
+		],
+		"_Name": "ActionBar1"
+	}
+}

@@ -1,0 +1,26 @@
+{
+	"_Type": "Action.Type.ODataService.CallFunction",
+	"ActionResult": {
+		"_Name": "PredictionResult"
+	},
+	"OnFailure": "/flexso_mdk_parking/Actions/Predictions/Predictions_PredictErrorMessage.action",
+	"OnSuccess": "/flexso_mdk_parking/Actions/Predictions/NavToPredictions_Result.action",
+	"OnSuccessLog": {
+		"Message": "",
+		"Level": "Off"
+	},
+	"OnFailureLog": {
+		"Message": "",
+		"Level": "Off"
+	},
+	"Target": {
+		"Service": "/flexso_mdk_parking/Services/sap_flexso_parkingapp_mobileservices.service",
+		"Function": {
+			"Name": "Predict",
+			"Parameters": {
+				"Lot": "#Page:Predictions_MakePrediction/#Control:FCListPicker/#SelectedValue",
+				"regtime": "/flexso_mdk_parking/Rules/Predictions/DetermineDateString.js"
+			}
+		}
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"_Type": "Action.Type.ODataService.CreateEntity",
+	"ActionResult": {
+		"_Name": "create"
+	},
+	"OnFailure": "/flexso_mdk_parking/Actions/CreateEntityFailureMessage.action",
+	"OnSuccess": "/flexso_mdk_parking/Actions/CreateEntitySuccessMessage.action",
+	"Target": {
+		"EntitySet": "Lots",
+		"Service": "/flexso_mdk_parking/Services/sap_flexso_parkingapp_mobileservices.service"
+	},
+	"Properties": {
+		"nr": "#Control:nr/#Value",
+		"floor": "#Control:floor/#Value",
+		"location_name": "#Control:location_name/#SelectedValue"
+	}
+}

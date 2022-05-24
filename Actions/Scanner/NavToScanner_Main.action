@@ -1,0 +1,6 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"PageToOpen": "/flexso_mdk_parking/Pages/Scanner/Scanner_ScanCodes.page",
+	"ModalPage": true,
+	"NavigationType": "Inner"
+}

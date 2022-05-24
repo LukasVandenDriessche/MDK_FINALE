@@ -1,0 +1,12 @@
+{
+	"_Type": "Action.Type.ODataService.CreateEntity",
+	"Target": {
+		"Service": "/flexso_mdk_parking/Services/sap_flexso_parkingapp_mobileservices.service",
+		"EntitySet": "Registrations"
+	},
+	"Properties": {
+		"regtime": "/flexso_mdk_parking/Rules/GetCurrentDate.js",
+		"available": "/flexso_mdk_parking/Rules/Registrations/ReturnTrue.js",
+		"lot_ID": "0"
+	}
+}

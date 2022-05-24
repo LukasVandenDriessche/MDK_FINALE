@@ -1,0 +1,16 @@
+{
+    "CreateLinks": [],
+    "OnFailure": "/flexso_mdk_parking/Actions/CreateEntityFailureMessage.action",
+    "OnSuccess": "/flexso_mdk_parking/Actions/CreateEntitySuccessMessage.action",
+    "Properties": {
+        "name": "#Control:name/#Value"
+    },
+    "Target": {
+        "EntitySet": "Locations",
+        "Service": "/flexso_mdk_parking/Services/sap_flexso_parkingapp_mobileservices.service"
+    },
+    "ActionResult": {
+        "_Name": "create"
+    },
+    "_Type": "Action.Type.ODataService.CreateEntity"
+}

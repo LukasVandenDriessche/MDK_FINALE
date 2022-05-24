@@ -1,0 +1,21 @@
+{
+    "Service": "/flexso_mdk_parking/Services/sap_flexso_parkingapp_mobileservices.service",
+    "DefiningRequests": [{
+            "Name": "Locations",
+            "Query": "Locations"
+        },
+        {
+            "Name": "Lots",
+            "Query": "Lots"
+        },
+        {
+            "Name": "Registrations",
+            "Query": "Registrations"
+        }
+    ],
+    "_Type": "Action.Type.OfflineOData.Download",
+    "ActionResult": {
+        "_Name": "sync"
+    },
+    "OnFailure": "/flexso_mdk_parking/Actions/Service/SyncFailureMessage.action"
+}

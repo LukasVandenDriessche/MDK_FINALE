@@ -1,0 +1,13 @@
+{
+    "Target": {
+        "EntitySet": "Registrations",
+        "Service": "/flexso_mdk_parking/Services/sap_flexso_parkingapp_mobileservices.service",
+        "ReadLink": "{@odata.readLink}"
+    },
+    "OnSuccess": "/flexso_mdk_parking/Actions/DeleteEntitySuccessMessage.action",
+    "OnFailure": "/flexso_mdk_parking/Actions/DeleteEntityFailureMessage.action",
+    "ActionResult": {
+        "_Name": "delete"
+    },
+    "_Type": "Action.Type.ODataService.DeleteEntity"
+}

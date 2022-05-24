@@ -1,0 +1,9 @@
+{
+    "Service": "/flexso_mdk_parking/Services/sap_flexso_parkingapp_mobileservices.service",
+    "_Type": "Action.Type.OfflineOData.Upload",
+    "ActionResult": {
+        "_Name": "sync"
+    },
+    "OnSuccess": "/flexso_mdk_parking/Actions/Service/DownloadStartedMessage.action",
+    "OnFailure": "/flexso_mdk_parking/Actions/Service/SyncFailureMessage.action"
+}

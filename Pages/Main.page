@@ -1,0 +1,107 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.Image",
+					"_Name": "SectionImage0",
+					"Visible": true,
+					"Image": "/flexso_mdk_parking/Images/flexso_logo_notext.jpg",
+					"Width": 150,
+					"Height": 150,
+					"Alignment": "center",
+					"ContentMode": "ScaleAspectFit",
+					"PaddingBottom": 10
+				},
+				{
+					"_Type": "Section.Type.ButtonTable",
+					"_Name": "SectionButtonTable0",
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Buttons": [
+						{
+							"_Name": "SectionButton0",
+							"Title": "$(L,'locations_title')",
+							"TextAlignment": "center",
+							"Style": "MyButton",
+							"OnPress": "/flexso_mdk_parking/Actions/Locations/NavToLocations_List.action"
+						},
+						{
+							"_Name": "SectionButton1",
+							"Title": "$(L,'lots_title')",
+							"TextAlignment": "center",
+							"Visible": false,
+							"Style": "MyButton",
+							"OnPress": "/flexso_mdk_parking/Actions/Lots/NavToLots_List.action"
+						},
+						{
+							"_Name": "SectionButton2",
+							"Title": "Registrations",
+							"TextAlignment": "center",
+							"Visible": false,
+							"Style": "MyButton",
+							"OnPress": "/flexso_mdk_parking/Actions/Registrations/NavToRegistrations_List.action"
+						},
+						{
+							"_Name": "SectionButton3",
+							"Title": "$(L,'scanner_button')",
+							"TextAlignment": "center",
+							"Visible": true,
+							"Style": "MyButton",
+							"OnPress": "/flexso_mdk_parking/Actions/Scanner/NavToScanner_Main.action"
+						},
+						{
+							"_Name": "SectionButton4",
+							"Title": "$(L,'prediction_button')",
+							"TextAlignment": "center",
+							"Visible": true,
+							"Style": "MyButton",
+							"OnPress": "/flexso_mdk_parking/Actions/Predictions/NavToPredictions_MakePrediction.action"
+						}
+					]
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Main",
+	"Caption": "$(L,'main_title')",
+	"PrefersLargeCaption": true,
+	"ToolBar": {
+		"Items": [
+			{
+				"_Type": "Control.Type.ToolbarItem",
+				"_Name": "LogoutToolbarItem",
+				"Caption": "$(L,'logout_button')",
+				"Enabled": true,
+				"Visible": true,
+				"Clickable": true,
+				"OnPress": "/flexso_mdk_parking/Actions/Logout.action"
+			},
+			{
+				"_Type": "Control.Type.ToolbarItem",
+				"_Name": "UploadToolbarItem",
+				"Caption": "$(L,'sync_button')",
+				"Enabled": true,
+				"Visible": "$(PLT,true,true,false)",
+				"Clickable": true,
+				"OnPress": "/flexso_mdk_parking/Actions/Service/SyncStartedMessage.action"
+			},
+			{
+				"_Type": "Control.Type.ToolbarItem",
+				"_Name": "ToolbarItem0",
+				"Caption": "Upload Logs",
+				"Enabled": true,
+				"Visible": "$(PLT,true,true,false)",
+				"Clickable": true,
+				"OnPress": "/flexso_mdk_parking/Actions/Logger/LogUpload.action"
+			}
+		]
+	}
+}

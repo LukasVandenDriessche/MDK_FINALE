@@ -1,0 +1,25 @@
+{
+	"_Type": "Action.Type.ODataService.Initialize",
+	"ActionResult": {
+		"_Name": "init"
+	},
+	"OnFailure": "/flexso_mdk_parking/Actions/Service/InitializeOfflineFailureMessage.action",
+	"OnSuccess": "/flexso_mdk_parking/Actions/Logger/LogSetState.action",
+	"ShowActivityIndicator": true,
+	"ActivityIndicatorText": "Downloading...",
+	"Service": "/flexso_mdk_parking/Services/sap_flexso_parkingapp_mobileservices.service",
+	"DefiningRequests": [
+		{
+			"Name": "Locations",
+			"Query": "Locations"
+		},
+		{
+			"Name": "Lots",
+			"Query": "Lots"
+		},
+		{
+			"Name": "Registrations",
+			"Query": "Registrations"
+		}
+	]
+}

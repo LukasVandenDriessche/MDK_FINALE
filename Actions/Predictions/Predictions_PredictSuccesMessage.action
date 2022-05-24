@@ -1,0 +1,6 @@
+{
+	"_Type": "Action.Type.Message",
+	"Message": "Prediction was succesfull",
+	"Title": "Succes",
+	"OKCaption": "OK"
+}

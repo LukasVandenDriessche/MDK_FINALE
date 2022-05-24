@@ -1,0 +1,129 @@
+{
+	"Controls": [
+		{
+			"DataSubscriptions": [
+				"Registrations"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable",
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Subhead": "{ID}",
+						"Footnote": "{floor}",
+						"Description": "{nr}",
+						"StatusText": "{Available}",
+						"HeadlineText": "{location_name}",
+						"Tags": [
+						]
+					},
+					"_Type": "Section.Type.ObjectHeader",
+					"_Name": "SectionObjectHeader0"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"Value": "{ID}",
+							"_Name": "KeyValue0",
+							"KeyName": "ID"
+						},
+						{
+							"Value": "{nr}",
+							"_Name": "KeyValue1",
+							"KeyName": "nr"
+						},
+						{
+							"Value": "{floor}",
+							"_Name": "KeyValue2",
+							"KeyName": "floor"
+						},
+						{
+							"Value": "{location_name}",
+							"_Name": "KeyValue3",
+							"KeyName": "location_name"
+						},
+						{
+							"Value": "{Available}",
+							"_Name": "KeyValue4",
+							"KeyName": "Available"
+						}
+					],
+					"MaxItemCount": 1,
+					"_Type": "Section.Type.KeyValue",
+					"_Name": "SectionKeyValue0",
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Layout": {
+						"NumberOfColumns": 2
+					}
+				},
+				{
+					"Header": {
+						"_Name": "SectionHeader0",
+						"UseTopPadding": true,
+						"Caption": "registrations"
+					},
+					"_Type": "Section.Type.ObjectTable",
+					"Target": {
+						"Service": "/flexso_mdk_parking/Services/sap_flexso_parkingapp_mobileservices.service",
+						"EntitySet": "{#Property:@odata.readLink}/registrations",
+						"QueryOptions": "$top=5&$orderby=regtime desc"
+					},
+					"_Name": "SectionObjectTable0",
+					"Visible": false,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"ObjectCell": {
+						"ContextMenu": {
+							"Items": [
+							],
+							"PerformFirstActionWithFullSwipe": true
+						},
+						"Title": "{ID}",
+						"Subhead": "{regtime}",
+						"Footnote": "{lot_ID}",
+						"Description": "{available}",
+						"DetailImageIsCircular": false,
+						"PreserveIconStackSpacing": false,
+						"AccessoryType": "disclosureIndicator",
+						"OnPress": "/flexso_mdk_parking/Actions/Registrations/NavToRegistrations_Detail.action"
+					}
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Lots_Detail",
+	"Caption": "Lots",
+	"PrefersLargeCaption": true,
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem0",
+				"Caption": "",
+				"SystemItem": "Edit",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"OnPress": "/flexso_mdk_parking/Actions/Lots/NavToLots_Edit.action"
+			},
+			{
+				"_Name": "ActionBarItem2",
+				"Caption": "Predict",
+				"SystemItem": "Action",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": true
+			},
+			{
+				"_Name": "ActionBarItem1",
+				"Caption": "More",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"OnPress": "/flexso_mdk_parking/Actions/Lots/Lots_DetailPopover.action"
+			}
+		],
+		"_Name": "ActionBar1"
+	}
+}

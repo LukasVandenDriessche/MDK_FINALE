@@ -1,0 +1,7 @@
+{
+	"_Type": "Action.Type.Logger.Upload",
+	"OnFailure": "/flexso_mdk_parking/Actions/Logger/LogUploadFailure.action",
+	"OnSuccess": "/flexso_mdk_parking/Actions/Logger/LogUploadSuccesful.action",
+	"ShowActivityIndicator": true,
+	"ActivityIndicatorText": "Uploading logs ..."
+}

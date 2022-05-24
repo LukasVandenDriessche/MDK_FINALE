@@ -1,0 +1,7 @@
+{
+	"_Type": "Action.Type.OpenBarcodeScanner",
+	"ActionResult": {
+		"_Name": "OpenScanner"
+	},
+	"OnSuccess": "/flexso_mdk_parking/Rules/Scanner/ScanItem.js"
+}

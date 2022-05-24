@@ -1,0 +1,20 @@
+{
+    "_Type": "Action.Type.ODataService.UpdateEntity",
+    "Target": {
+        "EntitySet": "Registrations",
+        "Service": "/flexso_mdk_parking/Services/sap_flexso_parkingapp_mobileservices.service",
+        "ReadLink": "{@odata.readLink}"
+    },
+    "Properties": {
+        "ID": "#Control:ID/#Value",
+        "regtime": "#Control:regtime/#Value",
+        "available": "#Control:available/#Value",
+        "lot_ID": "#Control:lot_ID/#SelectedValue"
+    },
+    "UpdateLinks": [],
+    "ActionResult": {
+        "_Name": "update"
+    },
+    "OnSuccess": "/flexso_mdk_parking/Actions/UpdateEntitySuccessMessage.action",
+    "OnFailure": "/flexso_mdk_parking/Actions/UpdateEntityFailureMessage.action"
+}

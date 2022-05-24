@@ -1,0 +1,52 @@
+{
+	"Credential": "cf",
+	"CF": {
+		"Target": "https://api.cf.us10.hana.ondemand.com",
+		"Organization": "ba2ca321-125c-4069-8528-24b15746a437",
+		"Space": "4d22115e-943d-4929-9101-4fe2e895878c",
+		"Deploy": {
+			"Description": "",
+			"WebClient": {
+				"Runtime": "production",
+				"URL": "https://mdk-webclient-runtime.cfapps.us10.hana.ondemand.com/runtime/"
+			},
+			"Destination": [
+				{
+					"CF": "sap.flexso.parkingapp.mobileservices",
+					"MDK": "sap.flexso.parkingapp.mobileservices",
+					"URL": ""
+				}
+			],
+			"Name": "ns.flexso_mdk_parking",
+			"Version": "1.0.0",
+			"StandaloneRouter": true,
+			"URL": "https://5bd22c6dtrial-dev-nsflexso-mdk-parking-approuter.cfapps.us10.hana.ondemand.com/nsflexso_mdk_parking/index.html",
+			"AppRouter": "standalone"
+		}
+	},
+	"MobileService": {
+		"Type": "standard",
+		"AdminAPI": "https://mobile-service-cockpit-api.cfapps.us10.hana.ondemand.com/cockpit/v1/org/ba2ca321-125c-4069-8528-24b15746a437/space/4d22115e-943d-4929-9101-4fe2e895878c",
+		"AppId": "sap.flexso.parkingapp.mobileservices",
+		"Destination": [
+			"sap.flexso.parkingapp.mobileservices",
+			"DAR"
+		]
+	},
+	"Onboarding": {
+		"Schema": "sapmobilesvcs",
+		"TimeZone": "UTC",
+		"URL": "sapmobilesvcs://?AppId=sap.flexso.parkingapp.mobileservices&ClientId=02e19e3c-1914-4c7a-99d1-f708274ff2b6&ServerUrl=https://5bd22c6dtrial-dev-sap-flexso-parkingapp-mobileservices.cfapps.us10.hana.ondemand.com&SapCloudPlatformEndpoint=https://5bd22c6dtrial-dev-sap-flexso-parkingapp-mobileservices.cfapps.us10.hana.ondemand.com&AuthorizationEndpointUrl=https://5bd22c6dtrial-dev-sap-flexso-parkingapp-mobileservices.cfapps.us10.hana.ondemand.com/oauth2/api/v1/authorize&RedirectUrl=https://5bd22c6dtrial-dev-sap-flexso-parkingapp-mobileservices.cfapps.us10.hana.ondemand.com&TokenUrl=https://5bd22c6dtrial-dev-sap-flexso-parkingapp-mobileservices.cfapps.us10.hana.ondemand.com/oauth2/api/v1/token"
+	},
+	"LCAP": {
+		"FullName": "",
+		"Service": [],
+		"sourceTemplate": {
+			"id": "html5moduletemplates.basicSAPUI5ApplicationProjectModule",
+			"version": "1.40.12"
+		}
+	},
+	"Build": {
+		"SourceMap": true
+	}
+}

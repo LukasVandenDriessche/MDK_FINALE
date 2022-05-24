@@ -1,0 +1,88 @@
+{
+	"Controls": [
+		{
+			"DataSubscriptions": [
+				"Lots"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable",
+			"Sections": [
+				{
+					"KeyAndValues": [
+						{
+							"Value": "{name}",
+							"_Name": "KeyValue0",
+							"KeyName": "$(L,'locdet_loc')"
+						}
+					],
+					"MaxItemCount": 1,
+					"_Type": "Section.Type.KeyValue",
+					"_Name": "SectionKeyValue0",
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Layout": {
+						"NumberOfColumns": 2
+					}
+				},
+				{
+					"Header": {
+						"_Name": "SectionHeader0",
+						"UseTopPadding": true,
+						"Caption": "/flexso_mdk_parking/Rules/Locations/LotsDetail_Count.js"
+					},
+					"_Type": "Section.Type.ObjectTable",
+					"Target": {
+						"Service": "/flexso_mdk_parking/Services/sap_flexso_parkingapp_mobileservices.service",
+						"EntitySet": "{#Property:@odata.readLink}/lots",
+						"QueryOptions": "$orderby=Available desc,floor,nr"
+					},
+					"_Name": "SectionObjectTable0",
+					"EmptySection": {
+						"Caption": "No Lots available ...",
+						"FooterVisible": false
+					},
+					"ObjectCell": {
+						"ContextMenu": {
+							"Items": [
+							],
+							"PerformFirstActionWithFullSwipe": true,
+							"LeadingItems": "{location_name}"
+						},
+						"Title": "$(L,'locdet_nr') {nr}",
+						"Footnote": "$(L,'locdet_floor') {floor}",
+						"StatusText": "{Available}",
+						"DetailImageIsCircular": false,
+						"PreserveIconStackSpacing": false,
+						"AccessoryType": "disclosureIndicator",
+						"OnPress": "/flexso_mdk_parking/Actions/Lots/NavToLots_Detail.action"
+					}
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Locations_Detail",
+	"Caption": "$(L,'locdet_header')",
+	"PrefersLargeCaption": true,
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem0",
+				"Caption": "",
+				"SystemItem": "Edit",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"OnPress": "/flexso_mdk_parking/Actions/Locations/NavToLocations_Edit.action"
+			},
+			{
+				"_Name": "ActionBarItem1",
+				"Caption": "More",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"OnPress": "/flexso_mdk_parking/Actions/Locations/Locations_DetailPopover.action"
+			}
+		],
+		"_Name": "ActionBar1"
+	}
+}

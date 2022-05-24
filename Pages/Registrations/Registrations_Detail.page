@@ -1,0 +1,70 @@
+{
+	"Caption": "Registrations",
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/flexso_mdk_parking/Actions/Registrations/NavToRegistrations_Edit.action",
+				"Position": "Right",
+				"SystemItem": "Edit"
+			},
+			{
+				"OnPress": "/flexso_mdk_parking/Rules/Registrations/Registrations_DeleteConfirmation.js",
+				"Position": "Right",
+				"SystemItem": "Trash"
+			}
+		]
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"DetailImage": "",
+						"HeadlineText": "{ID}",
+						"Subhead": "{regtime}",
+						"Tags": [],
+						"BodyText": "",
+						"Footnote": "{lot_ID}",
+						"Description": "{available}",
+						"StatusText": "",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": ""
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "ID",
+							"Value": "{ID}"
+						},
+						{
+							"KeyName": "regtime",
+							"Value": "{regtime}"
+						},
+						{
+							"KeyName": "available",
+							"Value": "{available}"
+						},
+						{
+							"KeyName": "lot_ID",
+							"Value": "{lot_ID}"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Registrations_Detail"
+}

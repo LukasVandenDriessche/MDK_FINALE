@@ -1,0 +1,72 @@
+{
+	"Caption": "Update Registrations",
+	"ActionBar": {
+		"Items": [
+			{
+				"Position": "Left",
+				"SystemItem": "Cancel",
+				"OnPress": "/flexso_mdk_parking/Actions/CloseModalPage_Cancel.action"
+			},
+			{
+				"Position": "Right",
+				"SystemItem": "Save",
+				"OnPress": "/flexso_mdk_parking/Actions/Registrations/Registrations_UpdateEntity.action"
+			}
+		]
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Caption": "",
+					"Controls": [
+						{
+							"Caption": "ID",
+							"_Name": "ID",
+							"Value": "{ID}",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Mode": "Datetime",
+							"_Name": "regtime",
+							"Value": "{regtime}",
+							"Caption": "regtime",
+							"_Type": "Control.Type.FormCell.DatePicker"
+						},
+						{
+							"_Name": "available",
+							"Caption": "available",
+							"Value": "{available}",
+							"_Type": "Control.Type.FormCell.Switch"
+						},
+						{
+							"Caption": "lot_ID",
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": false,
+							"IsEditable": true,
+							"IsPickerDismissedOnSelection": true,
+							"IsSelectedSectionEnabled": true,
+							"IsVisible": true,
+							"PickerItems": {
+								"DisplayValue": "{ID}",
+								"ReturnValue": "{ID}",
+								"Target": {
+									"EntitySet": "Lots",
+									"Service": "/flexso_mdk_parking/Services/sap_flexso_parkingapp_mobileservices.service",
+									"UniqueIdType": "Integer"
+								}
+							},
+							"Value": "{lot_ID}",
+							"_Name": "lot_ID",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						}
+					]
+				}
+			],
+			"_Name": "PageOneFormCell",
+			"_Type": "Control.Type.FormCellContainer"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Registrations_Edit"
+}

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?><Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+  <Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+    <Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+  </Reference>
+  <DataServices>
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="ParkingService">
+      <EntityContainer Name="EntityContainer">
+        <EntitySet Name="Locations" EntityType="ParkingService.Locations">
+          <NavigationPropertyBinding Path="lots" Target="Lots"/>
+        </EntitySet>
+        <EntitySet Name="Test" EntityType="ParkingService.Test">
+          <NavigationPropertyBinding Path="predictions" Target="Predictions"/>
+        </EntitySet>
+        <EntitySet Name="Predictions" EntityType="ParkingService.Predictions">
+          <NavigationPropertyBinding Path="labels" Target="Labels"/>
+          <NavigationPropertyBinding Path="test" Target="Test"/>
+        </EntitySet>
+        <EntitySet Name="Labels" EntityType="ParkingService.Labels">
+          <NavigationPropertyBinding Path="prediction" Target="Predictions"/>
+          <NavigationPropertyBinding Path="results" Target="Results"/>
+        </EntitySet>
+        <EntitySet Name="Results" EntityType="ParkingService.Results">
+          <NavigationPropertyBinding Path="label" Target="Labels"/>
+        </EntitySet>
+        <EntitySet Name="Lots" EntityType="ParkingService.Lots">
+          <NavigationPropertyBinding Path="location" Target="Locations"/>
+          <NavigationPropertyBinding Path="registrations" Target="Registrations"/>
+        </EntitySet>
+        <EntitySet Name="Registrations" EntityType="ParkingService.Registrations">
+          <NavigationPropertyBinding Path="lot" Target="Lots"/>
+        </EntitySet>
+        <FunctionImport Name="Prediction" Function="ParkingService.Prediction" EntitySet="Test"/>
+        <FunctionImport Name="Predict" Function="ParkingService.Predict" EntitySet="Test"/>
+      </EntityContainer>
+      <EntityType Name="Locations">
+        <Key>
+          <PropertyRef Name="name"/>
+        </Key>
+        <Property Name="name" Type="Edm.String" MaxLength="100" Nullable="false"/>
+        <NavigationProperty Name="lots" Type="Collection(ParkingService.Lots)" Partner="location"/>
+      </EntityType>
+      <EntityType Name="Test">
+        <Key>
+          <PropertyRef Name="id"/>
+        </Key>
+        <Property Name="id" Type="Edm.Guid" Nullable="false"/>
+        <NavigationProperty Name="predictions" Type="Collection(ParkingService.Predictions)" Partner="test"/>
+        <Property Name="processedTime" Type="Edm.DateTimeOffset"/>
+        <Property Name="status" Type="Edm.String"/>
+      </EntityType>
+      <EntityType Name="Predictions">
+        <Key>
+          <PropertyRef Name="id"/>
+        </Key>
+        <Property Name="id" Type="Edm.Guid" Nullable="false"/>
+        <Property Name="objectId" Type="Edm.Guid"/>
+        <NavigationProperty Name="labels" Type="Collection(ParkingService.Labels)" Partner="prediction"/>
+        <NavigationProperty Name="test" Type="ParkingService.Test" Partner="predictions">
+          <ReferentialConstraint Property="test_id" ReferencedProperty="id"/>
+        </NavigationProperty>
+        <Property Name="test_id" Type="Edm.Guid"/>
+      </EntityType>
+      <EntityType Name="Labels">
+        <Key>
+          <PropertyRef Name="id"/>
+        </Key>
+        <Property Name="id" Type="Edm.Guid" Nullable="false"/>
+        <NavigationProperty Name="prediction" Type="ParkingService.Predictions" Partner="labels">
+          <ReferentialConstraint Property="prediction_id" ReferencedProperty="id"/>
+        </NavigationProperty>
+        <Property Name="prediction_id" Type="Edm.Guid"/>
+        <Property Name="name" Type="Edm.String"/>
+        <NavigationProperty Name="results" Type="Collection(ParkingService.Results)" Partner="label"/>
+      </EntityType>
+      <EntityType Name="Results">
+        <Key>
+          <PropertyRef Name="id"/>
+        </Key>
+        <Property Name="id" Type="Edm.Guid" Nullable="false"/>
+        <NavigationProperty Name="label" Type="ParkingService.Labels" Partner="results">
+          <ReferentialConstraint Property="label_id" ReferencedProperty="id"/>
+        </NavigationProperty>
+        <Property Name="label_id" Type="Edm.Guid"/>
+        <Property Name="probability" Type="Edm.Int32"/>
+        <Property Name="value" Type="Edm.Boolean"/>
+      </EntityType>
+      <EntityType Name="Lots">
+        <Key>
+          <PropertyRef Name="ID"/>
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+        <Property Name="nr" Type="Edm.Int32"/>
+        <Property Name="floor" Type="Edm.String" MaxLength="10"/>
+        <NavigationProperty Name="location" Type="ParkingService.Locations" Partner="lots">
+          <ReferentialConstraint Property="location_name" ReferencedProperty="name"/>
+        </NavigationProperty>
+        <Property Name="location_name" Type="Edm.String" MaxLength="100"/>
+        <NavigationProperty Name="registrations" Type="Collection(ParkingService.Registrations)" Partner="lot"/>
+        <Property Name="Available" Type="Edm.Boolean"/>
+      </EntityType>
+      <EntityType Name="Registrations">
+        <Key>
+          <PropertyRef Name="ID"/>
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+        <Property Name="regtime" Type="Edm.DateTimeOffset"/>
+        <Property Name="available" Type="Edm.Boolean"/>
+        <NavigationProperty Name="lot" Type="ParkingService.Lots" Partner="registrations">
+          <ReferentialConstraint Property="lot_ID" ReferencedProperty="ID"/>
+        </NavigationProperty>
+        <Property Name="lot_ID" Type="Edm.Guid"/>
+      </EntityType>
+      <Function Name="Prediction" IsBound="false" IsComposable="false">
+        <Parameter Name="Lot" Type="Edm.Guid"/>
+        <Parameter Name="regtime" Type="Edm.DateTimeOffset"/>
+        <ReturnType Type="ParkingService.Test"/>
+      </Function>
+      <Function Name="Predict" IsBound="false" IsComposable="false">
+        <Parameter Name="Lot" Type="Edm.String"/>
+        <Parameter Name="regtime" Type="Edm.String"/>
+        <ReturnType Type="ParkingService.Test"/>
+      </Function>
+      <Annotations Target="ParkingService.Lots/Available">
+        <Annotation Term="Core.Computed" Bool="true"/>
+      </Annotations>
+    </Schema>
+  </DataServices>
+</Edmx>

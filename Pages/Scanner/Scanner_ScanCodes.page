@@ -1,0 +1,114 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"validationProperties": {
+								"ValidationMessage": "Location moet ingevuld zijn",
+								"ValidationMessageColor": "#d60404",
+								"SeparatorIsHidden": true
+							},
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FCListPicker",
+							"IsEditable": true,
+							"IsVisible": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": false,
+							"Caption": "$(L,'scanner_location')",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": true,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": true,
+							"FilterProperty": "{name}",
+							"PickerItems": {
+								"Target": {
+									"Service": "/flexso_mdk_parking/Services/sap_flexso_parkingapp_mobileservices.service",
+									"EntitySet": "Locations",
+									"QueryOptions": "$orderby=name"
+								},
+								"DisplayValue": "{name}",
+								"ReturnValue": "{name}"
+							}
+						},
+						{
+							"_Type": "Control.Type.FormCell.Button",
+							"_Name": "FCButton",
+							"IsVisible": true,
+							"Styles": {
+								"Value": "BgButton"
+							},
+							"Title": "SCAN",
+							"TextAlignment": "center",
+							"ButtonType": "Normal",
+							"OnPress": "/flexso_mdk_parking/Actions/Scanner/Scanner_OpenScanner.action"
+						}
+					],
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell0"
+				},
+				{
+					"Controls": [
+						{
+							"_Type": "Control.Type.FormCell.Note",
+							"_Name": "FCNote",
+							"IsEditable": true,
+							"IsVisible": true,
+							"PlaceHolder": "$(L,'scanner_fieldholder')"
+						}
+					],
+					"Header": {
+						"_Name": "SectionHeader0",
+						"UseTopPadding": true,
+						"Caption": "$(L,'scanner_items')"
+					},
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell1"
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Scanner_ScanCodes",
+	"Caption": "$(L,'qr_scanner_header')",
+	"PrefersLargeCaption": true,
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem1",
+				"Caption": "Item",
+				"SystemItem": "Cancel",
+				"Position": "Left",
+				"IsIconCircular": false,
+				"Visible": true,
+				"OnPress": "/flexso_mdk_parking/Actions/CloseModalPage_Cancel.action"
+			},
+			{
+				"_Name": "ActionBarItem0",
+				"Caption": "Item",
+				"SystemItem": "Save",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": true,
+				"OnPress": "/flexso_mdk_parking/Rules/Registrations/RegisterAllCodes.js"
+			}
+		],
+		"_Name": "ActionBar1"
+	}
+}

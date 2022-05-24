@@ -1,0 +1,6 @@
+{
+    "ModalPageFullscreen": false,
+    "ModalPage": true,
+    "PageToOpen": "/flexso_mdk_parking/Pages/Locations/Locations_Create.page",
+    "_Type": "Action.Type.Navigation"
+}

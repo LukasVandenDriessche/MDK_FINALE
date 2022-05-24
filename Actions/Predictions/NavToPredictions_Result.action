@@ -1,0 +1,6 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"PageToOpen": "/flexso_mdk_parking/Pages/Predictions/Predictions_Result.page",
+	"ModalPage": true,
+	"NavigationType": "Inner"
+}
